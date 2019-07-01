@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Text;
-using iTunesDB.Net.Attributes;
-using iTunesDB.Net.Database;
+﻿using System.IO;
 using DO = iTunesDB.Net.Enumerations.DataObjects;
 
 namespace iTunesDB.Net.Readers.DataObjects

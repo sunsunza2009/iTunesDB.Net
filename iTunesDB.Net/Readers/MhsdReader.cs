@@ -1,8 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Linq;
-using System.Text;
 using iTunesDB.Net.Database;
 using iTunesDB.Net.Enumerations;
 

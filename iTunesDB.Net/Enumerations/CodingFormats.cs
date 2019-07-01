@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
-namespace iTunesDB.Net.Enumerations
+﻿namespace iTunesDB.Net.Enumerations
 {
     // https://github.com/artm/ipod_db/blob/master/doc/ITunesDB%20-%20wikiPodLinux.html
     // type1 and type2 used to be one 2 byte field, but by it doesn't get reversed 

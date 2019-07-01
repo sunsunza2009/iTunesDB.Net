@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Reflection;
@@ -8,7 +7,6 @@ using System.Security;
 using System.Text;
 using iTunesDB.Net.Database;
 using iTunesDB.Net.Enumerations;
-using iTunesDB.Net.Readers;
 using iTunesDB.Net.Readers.DataObjects;
 
 namespace iTunesDB.Net

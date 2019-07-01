@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Text;
 using iTunesDB.Net.Attributes;
 using iTunesDB.Net.Database;
 using DO = iTunesDB.Net.Enumerations.DataObjects; 

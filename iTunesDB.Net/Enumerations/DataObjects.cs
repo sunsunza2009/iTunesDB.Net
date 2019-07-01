@@ -1,11 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using iTunesDB.Net.Attributes;
-using iTunesDB.Net.Readers.DataObjects;
-
-namespace iTunesDB.Net.Enumerations
+﻿namespace iTunesDB.Net.Enumerations
 {
     // http://read.pudn.com/downloads152/doc/666430/iTunesDB-format.pdf
     public enum DataObjects
