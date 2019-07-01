@@ -9,34 +9,29 @@ namespace iTunesDB.Net.Tests
     [TestFixture]
     public class TestBase
     {
-        //public const string PATH = "F:\\iPod_Control\\iTunes\\";
-        public const string DbFilePath = "..\\..\\Data\\";
-        public TestContext TestContext { get; set; }
+        private static string _dbFilePath;
         internal static MhbdReader Reader { get; set; }
-        public static iTunesDb Db { get; set; }
+        protected static iTunesDb Db { get; set; }
 
         [SetUp]
-        public static void AssemblyInitialize()
+        public static void Setup()
         {
 #if !ASYNC
+            var pathToTestDirectory = TestContext.CurrentContext.TestDirectory;
+            _dbFilePath = Path.Combine(pathToTestDirectory, "Data", "iTunesDB");
+
             Reader = new MhbdReader();
-            Db = Reader.Open(DbFilePath + "iTunesDB");
+            Db = Reader.Open(_dbFilePath);
 #endif
         }
 
-        public static int DbFileSize
+        public static int DbFileSize => GetFileSize(_dbFilePath);
+
+        public static int GetFileSize(string fileName)
         {
-            get { return GetFileSize(DbFilePath + "iTunesDB"); }
+            return Convert.ToInt32(new FileInfo(fileName).Length);
         }
 
-        public static int GetFileSize(string FileName)
-        {
-            return Convert.ToInt32(new FileInfo(FileName).Length);
-        }
-
-        public static string DbFileName
-        {
-            get { return DbFilePath + "iTunesDB"; }
-        }
+        public static string DbFileName => _dbFilePath;
     }
 }
