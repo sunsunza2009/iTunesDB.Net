@@ -1,14 +1,14 @@
 ﻿using System;
 using System.Linq;
 using iTunesDB.Net.Readers;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+using NUnit.Framework;
 
 namespace iTunesDB.Net.Tests
 {
-    [TestClass]
+    [TestFixture]
     public class ReaderTests : TestBase
     {
-        [TestMethod, TestCategory("Reader")]
+        [Test, Category("Reader")]
         public void CanCreateKnownObjectID()
         {
             var obj = iTunesReader.CreateReader("mhbd", null);
@@ -16,14 +16,13 @@ namespace iTunesDB.Net.Tests
             Assert.AreEqual(typeof(MhbdReader), obj.GetType());
         }
 
-        [TestMethod, TestCategory("Reader")]
-        [ExpectedException(typeof(ArgumentException))]
+        [Test, Category("Reader")]
         public void CannotCreateUnknownObjectID()
         {
-            iTunesReader.CreateReader("xxxx", null);
+            Assert.That(() => iTunesReader.CreateReader("xxxx", null), Throws.TypeOf<ArgumentException>());
         }
 
-        [TestMethod, TestCategory("Reader")]
+        [Test, Category("Reader")]
         public void CanOpenAndParse()
         {
             Assert.AreEqual(229824, Reader.AllChildren.Count());

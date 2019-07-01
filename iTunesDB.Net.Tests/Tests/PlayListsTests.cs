@@ -1,21 +1,20 @@
-﻿using System;
-using System.Diagnostics;
-using System.Linq;
+﻿using System.Linq;
 using iTunesDB.Net.Database;
 using iTunesDB.Net.Enumerations;
-using iTunesDB.Net.Readers;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+using NUnit.Framework;
 
 namespace iTunesDB.Net.Tests
 {
-    [TestClass]
+    [TestFixture]
     public class PlayListsTests : TestBase
     {
-        [TestMethod, TestCategory("iTunesDb")]
+        [Test, Category("iTunesDb")]
         public void PlayLists_PlayListCount()
         {
-            var rdrPLContainer = Reader.Children.FirstOrDefault(r => ((ListContainer)(r.DbObject)).ListType == ListTypes.PlayList);
-            var rdrSPPLContainer = Reader.Children.FirstOrDefault(r => ((ListContainer)(r.DbObject)).ListType == ListTypes.SpecialPodcastPlayList);
+            var rdrPLContainer =
+                Reader.Children.FirstOrDefault(r => ((ListContainer) (r.DbObject)).ListType == ListTypes.PlayList);
+            var rdrSPPLContainer = Reader.Children.FirstOrDefault(r =>
+                ((ListContainer) (r.DbObject)).ListType == ListTypes.SpecialPodcastPlayList);
             var rdrPLContainerPlayLists = rdrPLContainer.Children.FirstOrDefault();
             var rdrSPPLContainerPlayLists = rdrSPPLContainer.Children.FirstOrDefault();
             Assert.AreEqual(rdrPLContainerPlayLists.TotalSize, Db.PlayLists.Count);

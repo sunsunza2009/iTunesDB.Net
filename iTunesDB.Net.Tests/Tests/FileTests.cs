@@ -1,27 +1,23 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Text;
+﻿using System.IO;
 using iTunesDB.Net.Readers;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+using NUnit.Framework;
 
 namespace iTunesDB.Net.Tests
 {
-    [TestClass]
+    [TestFixture]
     public class FileTests : TestBase
     {
-        [TestMethod, TestCategory("Files")]
+        [Test, Category("Files")]
         public void ValidDbCanBeOpened()
         {
             Assert.IsNotNull(Db);
         }
 
-        [TestMethod, TestCategory("Files")]
-        [ExpectedException(typeof(FileNotFoundException))]
+        [Test, Category("Files")]
         public void InvalidDbCannotBeOpened()
         {
-            new MhbdReader().Open("C:\\INVALID_DIRECTORY\\INVALID_FILE");
+            Assert.That(() =>
+                new MhbdReader().Open("C:\\INVALID_DIRECTORY\\INVALID_FILE"), Throws.TypeOf<FileNotFoundException>());
         }
     }
 }

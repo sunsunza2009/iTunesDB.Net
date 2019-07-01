@@ -1,22 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using iTunesDB.Net.Database;
-using iTunesDB.Net.Events;
-using iTunesDB.Net.Readers;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using NUnit.Framework;
 
 namespace iTunesDB.Net.Tests
 {
-    [TestClass]
+    [TestFixture]
     public class EventTests
     {
-
-
-        [TestMethod, TestCategory("Events")]
+        [Test, Category("Events")]
         public void Events_TrackRead()
         {
-            #if ASYNC
+#if ASYNC
             var rdr = new MhbdReader();
             var tracks = new List<Track>();
             rdr.TrackRead += (object sender, TrackReadEventArgs e) =>
@@ -26,7 +18,7 @@ namespace iTunesDB.Net.Tests
             };
             rdr.Open(TestBase.DbFilePath + "iTunesDB");
             Assert.AreEqual(rdr.Db.Tracks.Count, tracks.Count);
-            #endif
+#endif
         }
     }
 }

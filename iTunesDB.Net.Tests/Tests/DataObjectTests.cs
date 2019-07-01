@@ -1,13 +1,8 @@
-﻿using System;
-using System.Diagnostics;
-using System.Linq;
-using iTunesDB.Net.Database;
-using iTunesDB.Net.Readers;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using NUnit.Framework;
 
 namespace iTunesDB.Net.Tests
 {
-    [TestClass]
+    [TestFixture]
     public class DataObjectTests : TestBase
     {
         //[TestMethod, TestCategory("DataObject")]

@@ -1,16 +1,12 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Linq;
-using System.Text;
 using iTunesDB.Net.Database;
-using iTunesDB.Net.Enumerations;
 using iTunesDB.Net.Readers;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+using NUnit.Framework;
 
 namespace iTunesDB.Net.Tests
 {
-    [TestClass]
+    [TestFixture]
     public class TestBase
     {
         //public const string PATH = "F:\\iPod_Control\\iTunes\\";
@@ -19,21 +15,18 @@ namespace iTunesDB.Net.Tests
         internal static MhbdReader Reader { get; set; }
         public static iTunesDb Db { get; set; }
 
-        [AssemblyInitialize()]
-        public static void AssemblyInitialize(TestContext Context)
+        [SetUp]
+        public static void AssemblyInitialize()
         {
-            #if !ASYNC
+#if !ASYNC
             Reader = new MhbdReader();
             Db = Reader.Open(DbFilePath + "iTunesDB");
-            #endif
+#endif
         }
 
         public static int DbFileSize
         {
-            get
-            {
-                return GetFileSize(DbFilePath + "iTunesDB");
-            }
+            get { return GetFileSize(DbFilePath + "iTunesDB"); }
         }
 
         public static int GetFileSize(string FileName)
@@ -43,10 +36,7 @@ namespace iTunesDB.Net.Tests
 
         public static string DbFileName
         {
-            get
-            {
-                return DbFilePath + "iTunesDB";
-            }
+            get { return DbFilePath + "iTunesDB"; }
         }
     }
 }
