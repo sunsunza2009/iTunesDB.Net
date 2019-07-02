@@ -37,6 +37,7 @@
         LibraryPlaylistIndex = 52,
         LibraryPlaylistIndexLetterJumpTable = 53,
         SizingAndOrder = 100,	                    // iTunes uses it for column sizing info as well as an order indicator in playlists.
+        Unknown2 = 102,
         AlbumListAlbum = 200,	                    // In Album List, iTunes 7.1
         AlbumListArtist = 201,	                    // In Album List, iTunes 7.1
         AlbumListArtistSort = 202,	                // For sorting. In Album List, iTunes 7.1

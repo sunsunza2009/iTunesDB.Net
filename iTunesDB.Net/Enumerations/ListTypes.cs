@@ -4,8 +4,9 @@
     {
         Tracks = 1,
         PlayList = 2,
-        SpecialPodcastPlayList = 3//,
-        //Albums = 4,
-        //Artists = 8
+        SpecialPodcastPlayList = 3,
+        Albums = 4,
+        Unknown = 5,
+        Artists = 8
     }
 }

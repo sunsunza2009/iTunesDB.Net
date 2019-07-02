@@ -7,7 +7,7 @@ namespace iTunesDB.Net.Readers.DataObjects
     internal class StringReader : DataObjectReader
     {
         private static DO[] dataObjectTypes = new DO[] { DO.Title, DO.Location, DO.Album, DO.Artist, DO.Genre, 
-            DO.FileType, DO.EQSetting, DO.Comment, DO.Category, DO.Composer, DO.Grouping, DO.Description };
+            DO.FileType, DO.EQSetting, DO.Comment, DO.Category, DO.Composer, DO.Grouping, DO.Description, DO.Unknown2 };
         public override DO[] DataObjectTypes { get { return dataObjectTypes; } }
 
         public override void ParseDataObject(BinaryReader Reader)
