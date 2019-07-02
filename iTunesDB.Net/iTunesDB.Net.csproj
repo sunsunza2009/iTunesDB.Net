@@ -45,6 +45,8 @@
   <ItemGroup>
     <Compile Include="Attributes\DataObjectAttribute.cs" />
     <Compile Include="Database\DbList.cs" />
+    <Compile Include="Database\MhiaObject.cs" />
+    <Compile Include="Database\MhlaObject.cs" />
     <Compile Include="Enumerations\CodingFormats.cs" />
     <Compile Include="Database\IDbObject.cs" />
     <Compile Include="Database\ListContainer.cs" />
@@ -62,8 +64,10 @@
     <Compile Include="Readers\DataObjects\NullReader.cs" />
     <Compile Include="Readers\DataObjects\StringReader.cs" />
     <Compile Include="Readers\iTunesReader.cs" />
+    <Compile Include="Readers\MhiaReader.cs" />
     <Compile Include="Readers\MhipReader.cs" />
     <Compile Include="Readers\MhitReader.cs" />
+    <Compile Include="Readers\MhlaReader.cs" />
     <Compile Include="Readers\MhlpReader.cs" />
     <Compile Include="Readers\MhltReader.cs" />
     <Compile Include="Readers\MhodReader.cs" />

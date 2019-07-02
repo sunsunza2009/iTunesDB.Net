@@ -14,6 +14,8 @@ namespace iTunesDB.Net.Readers
         public static List<DO> TrackTypes = new List<DO>();
         public static List<DO> PlayListTypes = new List<DO>();
         public static List<DO> MhipObjectTypes = new List<DO>();
+        public static List<DO> MhlaObjectTypes = new List<DO>();
+        public static List<DO> MhiaObjectTypes = new List<DO>();
 
         protected override bool ParseiTunesObject(BinaryReader Reader)
         {
@@ -37,6 +39,16 @@ namespace iTunesDB.Net.Readers
             {
                 var mhipobj = (MhipObject)ParentDbObject;
                 MhipObjectTypes.Add(dobj.Type);
+            }
+            else if (ParentDbObject is MhlaObject)
+            {
+                var mhlaobj = (MhlaObject) ParentDbObject;
+                MhlaObjectTypes.Add(dobj.Type);
+            }
+            else if (ParentDbObject is MhiaObject)
+            {
+                var mhiaobj = (MhiaObject) ParentDbObject;
+                MhiaObjectTypes.Add(dobj.Type);
             }
             else throw new Exception("Unknown mhod parent type");
             return true;
