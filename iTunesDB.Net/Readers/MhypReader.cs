@@ -1,6 +1,7 @@
 ﻿using System;
 using System.IO;
 using iTunesDB.Net.Database;
+using iTunesDB.Net.Enumerations;
 
 namespace iTunesDB.Net.Readers
 {
@@ -13,8 +14,12 @@ namespace iTunesDB.Net.Readers
         protected override bool ParseiTunesObject(BinaryReader Reader)
         {
             var playList = (PlayList)DbObject;
-            var playLists = (PlayLists)ParentDbObject;
-            playLists.Add(playList);
+            var playlists = (PlayLists)ParentDbObject;
+
+            var db = (iTunesDb)ParentReader.GrandparentDbObject;
+
+            playlists.Add(playList);
+            db.PlayLists.Add(playList);
             return true;
         }
     }
