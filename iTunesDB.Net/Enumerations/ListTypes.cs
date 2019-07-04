@@ -6,7 +6,7 @@
         PlayList = 2,
         SpecialPodcastPlayList = 3,
         Albums = 4,
-        Unknown = 5,
+        SmartPlayList = 5,
         Artists = 8
     }
 }

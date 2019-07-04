@@ -12,7 +12,7 @@ namespace iTunesDB.Net.Readers
         public override string[] ChildIDs { get { return new string[] { "mhyp" }; } }
         public override Type DatabaseType { get { return typeof(PlayLists); } }
         protected override bool WhileCondition { get { return TotalSize > Children.Count; } }
-        public static readonly ListTypes[] AllowedLists = new ListTypes[] { ListTypes.PlayList, ListTypes.SpecialPodcastPlayList, ListTypes.Unknown };
+        public static readonly ListTypes[] AllowedLists = new ListTypes[] { ListTypes.PlayList, ListTypes.SpecialPodcastPlayList, ListTypes.SmartPlayList };
 
         protected override bool ParseiTunesObject(BinaryReader Reader)
         {
