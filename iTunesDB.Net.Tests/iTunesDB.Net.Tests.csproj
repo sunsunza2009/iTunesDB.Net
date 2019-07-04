@@ -67,6 +67,7 @@
     <Compile Include="Tests\EventTests.cs" />
     <Compile Include="Tests\iTunesDbTests.cs" />
     <Compile Include="Tests\ListContainerTests.cs" />
+    <Compile Include="Tests\PlayListItemsTests.cs" />
     <Compile Include="Tests\PlayListsTests.cs" />
     <Compile Include="Tests\ReaderTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

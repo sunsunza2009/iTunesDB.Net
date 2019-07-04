@@ -13,6 +13,7 @@ namespace iTunesDB.Net.Readers
         public override Type DatabaseType { get { return typeof(DataObject); } }
         public static List<DO> TrackTypes = new List<DO>();
         public static List<DO> PlayListTypes = new List<DO>();
+        public static List<DO> PlayListItemTypes = new List<DO>();
         public static List<DO> MhipObjectTypes = new List<DO>();
         public static List<DO> MhlaObjectTypes = new List<DO>();
         public static List<DO> MhiaObjectTypes = new List<DO>();
@@ -35,6 +36,11 @@ namespace iTunesDB.Net.Readers
                 var playList = (PlayList)ParentDbObject;
                 PlayListTypes.Add(dobj.Type);
             }
+            else if (ParentDbObject is PlayListItem)
+            {
+                var playListItem = (PlayListItem) ParentDbObject;
+                PlayListItemTypes.Add(dobj.Type);
+            }
             else if (ParentDbObject is MhipObject)
             {
                 var mhipobj = (MhipObject)ParentDbObject;
@@ -50,7 +56,7 @@ namespace iTunesDB.Net.Readers
                 var mhiaobj = (MhiaObject) ParentDbObject;
                 MhiaObjectTypes.Add(dobj.Type);
             }
-            else throw new Exception("Unknown mhod parent type");
+            else throw new Exception($"Unknown mhod parent type {ParentDbObject.GetType()}");
             return true;
         }
     }
