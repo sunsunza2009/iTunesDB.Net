@@ -12,6 +12,9 @@ namespace iTunesDB.Net.Database
         [Attributes.DataObject("Unknown2")]
         public string Unknown2 { get; set; }
 
+        [Attributes.DataObject("SizingAndOrder")]
+        public int SizingAndOrder { get; set; }
+
         public int DataObjectChildCount { get; set; }
         public int PlaylistItemCount { get; set; }
         public bool IsMasterPlaylist { get; set; }

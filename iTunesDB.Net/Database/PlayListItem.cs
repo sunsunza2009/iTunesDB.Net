@@ -1,9 +1,13 @@
 ﻿using System;
+using iTunesDB.Net.Enumerations;
 
 namespace iTunesDB.Net.Database
 {
     public class PlayListItem : IDbObject
     {
+        [Attributes.DataObject("SizingAndOrder")]
+        public int SizingAndOrder { get; set; }
+
         public int DataObjectChildCount { get; set; }
         public short PodcastGroupingFlag { get; set; }
         public byte Unk4 { get; set; }
