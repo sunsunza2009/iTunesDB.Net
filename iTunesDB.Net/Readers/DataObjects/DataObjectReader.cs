@@ -20,28 +20,26 @@ namespace iTunesDB.Net.Readers.DataObjects
         public override IDbObject GrandparentDbObject { get { return ParentReader.GrandparentDbObject; } }
         public abstract void ParseDataObject(BinaryReader Reader);
 
-        public void SetDataObjectString(BinaryReader Reader, int Length)
+        public void SetDataObjectString(DO dotype, object value)
         {
-            var dotype = ((DataObject)DbObject).Type;
-            var text = ReadStringUtfDetect(Reader, Length);
             foreach (var pi in ParentDbObject.GetType().GetProperties())
             {
                 var attr = (DataObjectAttribute)pi.GetCustomAttributes(typeof(DataObjectAttribute), false)
                     .FirstOrDefault(a => ((DataObjectAttribute)a).Value.Equals(dotype.ToString(), StringComparison.InvariantCultureIgnoreCase));
                 if (attr == null) continue;
-                pi.SetValue(ParentDbObject, text, null);
-                SetAdditionalDataObject(ParentDbObject, pi.Name, text);
+                pi.SetValue(ParentDbObject, value, null);
+                SetAdditionalDataObject(ParentDbObject, pi.Name, value.ToString());
                 return;
             }
             foreach (var pi in ParentDbObject.GetType().GetProperties())
             {
                 if (!pi.Name.Equals(dotype.ToString(), StringComparison.InvariantCultureIgnoreCase)) continue;
-                pi.SetValue(ParentDbObject, text, null);
-                SetAdditionalDataObject(ParentDbObject, pi.Name, text);
+                pi.SetValue(ParentDbObject, value, null);
+                SetAdditionalDataObject(ParentDbObject, pi.Name, value.ToString());
                 return;
             }
 
-            throw new InvalidOperationException(ParentDbObject.GetType().Name 
+            throw new InvalidOperationException(ParentDbObject.GetType().Name
                 + " does not have a property matching the " + dotype.ToString() + " object type.");
         }
 
