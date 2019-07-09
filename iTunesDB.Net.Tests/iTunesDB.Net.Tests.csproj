@@ -70,6 +70,7 @@
     <Compile Include="Tests\FileTests.cs" />
     <Compile Include="Tests\TestBase.cs" />
     <Compile Include="Tests\TrackListTests.cs" />
+    <Compile Include="Tests\TrackTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\iTunesDB.Net\iTunesDB.Net.csproj">
