@@ -6,7 +6,7 @@ using NUnit.Framework;
 namespace iTunesDB.Net.Tests
 {
     [TestFixture]
-    public class ReaderTests : TestBase
+    public class ReaderTests
     {
         [Test, Category("Reader")]
         public void CanCreateKnownObjectID()
@@ -22,10 +22,24 @@ namespace iTunesDB.Net.Tests
             Assert.That(() => iTunesReader.CreateReader("xxxx", null), Throws.TypeOf<ArgumentException>());
         }
 
-        [Test, Category("Reader")]
-        public void CanOpenAndParse()
+        [TestFixture]
+        public class WithFilledDb : TestBase
         {
-            Assert.AreEqual(453, Reader.AllChildren.Count());
+            [Test, Category("Reader")]
+            public void CanOpenAndParse()
+            {
+                Assert.AreEqual(453, Reader.AllChildren.Count());
+            }
+        }
+
+        [TestFixture]
+        public class WithEmptyDb : TestBase
+        {
+            [Test, Category("Reader")]
+            public void CanOpenAndParse()
+            {
+                Assert.AreEqual(74, ReaderEmpty.AllChildren.Count());
+            }
         }
     }
 }
