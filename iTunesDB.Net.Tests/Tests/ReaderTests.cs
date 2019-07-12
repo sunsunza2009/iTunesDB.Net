@@ -28,7 +28,7 @@ namespace iTunesDB.Net.Tests
             [Test, Category("Reader")]
             public void CanOpenAndParse()
             {
-                Assert.AreEqual(453, Reader.AllChildren.Count());
+                Assert.AreEqual(457, Reader.AllChildren.Count());
             }
         }
 

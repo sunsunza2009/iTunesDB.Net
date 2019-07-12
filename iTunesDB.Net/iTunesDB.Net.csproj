@@ -59,6 +59,7 @@
     <Compile Include="Database\PlayListItem.cs" />
     <Compile Include="Database\iTunesDb.cs" />
     <Compile Include="Enumerations\DataObjects.cs" />
+    <Compile Include="Enumerations\Platform.cs" />
     <Compile Include="Events\TrackReadEventArgs.cs" />
     <Compile Include="Readers\DataObjects\DataObjectReader.cs" />
     <Compile Include="Readers\DataObjects\IntReader.cs" />
