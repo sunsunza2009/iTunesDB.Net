@@ -12,6 +12,8 @@ namespace iTunesDB.Net.Database
         public string Kind { get; set; }
         [DataObject("Comment")]
         public string Comments { get; set; }
+        [DataObject("Unknown3")]
+        public string Unknown3 { get; set; }
 
         public int NumberOfStrings { get; set; }
         public int TrackID { get; set; }
@@ -45,5 +47,48 @@ namespace iTunesDB.Net.Database
         public byte ApplicationRating { get; set; }
         public short BPM { get; set; }
         public int ArtworkCount { get; set; }
+
+
+        // ...
+
+
+        public MediaType MediaType { get; set; }
+
+        // ...
+
+        public short GaplessTrackFlag { get; set; }
+        public short GaplessAlbumFlag { get; set; }
+
+        // ...
+
+        public ulong AlbumId { get; set; }
+
+        // ...
+
+        public short Unk9 { get; set; }
+        public uint ArtworkSizeBytes { get; set; }
+        public int Unk11 { get; set; }
+        public DateTime DateReleased { get; set; }
+
+        public double SizeMB { get { return SizeBytes / 1048576d; } }
+        public double SoundCheckDB { get { return 30 - 10 * Math.Log(SoundCheck); } }
+        public int ApplicationStars { get { return Convert.ToInt32(Math.Round(ApplicationRating / 20d, 0)); } }
+        public int Stars { get { return Convert.ToInt32(Math.Round(Rating / 20d, 0)); } }
+        public double ArtworkSizeMB { get { return ArtworkSizeBytes / 1048576d; } }
+
+        // Not read so far:
+
+        public string Artist { get; set; }
+        public string Composer { get; set; }
+        public string Album { get; set; }
+        public string Grouping { get; set; }
+        public string Genre { get; set; }
+        public string Location { get; set; }
+        public string LocationWindows { get; set; }
+        public string EQSetting { get; set; }
+        public string Category { get; set; }
+        public string Description { get; set; }
+
+        // --
     }
 }

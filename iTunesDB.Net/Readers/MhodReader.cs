@@ -12,11 +12,10 @@ namespace iTunesDB.Net.Readers
         public override string[] ChildIDs { get { return new string[0]; } }
         public override Type DatabaseType { get { return typeof(DataObject); } }
         public static List<DO> TrackTypes = new List<DO>();
+        public static List<DO> AlbumListTypes = new List<DO>();
+        public static List<DO> AlbumItemTypes = new List<DO>();
         public static List<DO> PlayListTypes = new List<DO>();
         public static List<DO> PlayListItemTypes = new List<DO>();
-        public static List<DO> MhipObjectTypes = new List<DO>();
-        public static List<DO> MhlaObjectTypes = new List<DO>();
-        public static List<DO> MhiaObjectTypes = new List<DO>();
 
         protected override bool ParseiTunesObject(BinaryReader Reader)
         {
@@ -41,20 +40,15 @@ namespace iTunesDB.Net.Readers
                 var playListItem = (PlayListItem) ParentDbObject;
                 PlayListItemTypes.Add(dobj.Type);
             }
-            else if (ParentDbObject is MhipObject)
+            else if (ParentDbObject is AlbumList)
             {
-                var mhipobj = (MhipObject)ParentDbObject;
-                MhipObjectTypes.Add(dobj.Type);
+                var albumList = (AlbumList) ParentDbObject;
+                AlbumListTypes.Add(dobj.Type);
             }
-            else if (ParentDbObject is MhlaObject)
+            else if (ParentDbObject is AlbumItem)
             {
-                var mhlaobj = (MhlaObject) ParentDbObject;
-                MhlaObjectTypes.Add(dobj.Type);
-            }
-            else if (ParentDbObject is MhiaObject)
-            {
-                var mhiaobj = (MhiaObject) ParentDbObject;
-                MhiaObjectTypes.Add(dobj.Type);
+                var albumItem = (AlbumItem) ParentDbObject;
+                AlbumItemTypes.Add(dobj.Type);
             }
             else throw new Exception($"Unknown mhod parent type {ParentDbObject.GetType()}");
             return true;

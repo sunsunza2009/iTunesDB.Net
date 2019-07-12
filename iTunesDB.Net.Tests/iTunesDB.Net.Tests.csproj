@@ -59,6 +59,7 @@
     <Otherwise />
   </Choose>
   <ItemGroup>
+    <Compile Include="Tests\AlbumItemTests.cs" />
     <Compile Include="Tests\DataObjectTests.cs" />
     <Compile Include="Tests\EventTests.cs" />
     <Compile Include="Tests\iTunesDbTests.cs" />

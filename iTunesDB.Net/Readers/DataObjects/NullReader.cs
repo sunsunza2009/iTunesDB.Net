@@ -10,7 +10,7 @@ namespace iTunesDB.Net.Readers.DataObjects
             DO.EpisodeNo, DO.TvNetwork, DO.AlbumArtist, DO.ArtistNameSort, DO.Keywords, DO.Locale, DO.TitleSort, 
             DO.AlbumSort, DO.AlbumArtistSort, DO.ComposerSort, DO.TvShowSort, DO.Unknown, DO.SmartPlaylistData, 
             DO.SmartPlaylistRules, DO.LibraryPlaylistIndex, DO.LibraryPlaylistIndexLetterJumpTable,
-            DO.AlbumListAlbum, DO.AlbumListArtist, DO.AlbumListArtistSort, DO.AlbumListPodcastUrl, DO.AlbumListTVShow };
+            DO.AlbumListPodcastUrl, DO.AlbumListTVShow };
         public override DO[] DataObjectTypes { get { return dataObjectTypes; } }
         public override void ParseDataObject(BinaryReader Reader) { }
     }

@@ -31,6 +31,7 @@
         AlbumArtistSort = 29,	                    // For sorting.
         ComposerSort = 30,	                        // For sorting.
         TvShowSort = 31,	                        // For sorting.
+        Unknown3 = 44,
         Unknown = 32,	                            // Created by iTunes 7.1 for video tracks. Binary field, no string.
         SmartPlaylistData = 50,
         SmartPlaylistRules = 51,

@@ -29,7 +29,10 @@ namespace iTunesDB.Net.Tests
             [Test, NUnit.Framework.Category("iTunesDb")]
             public void PlayLists_Albums()
             {
-                //var listContainer = Db.ListContainers.Single(l => l.ListType == ListTypes.Albums);
+                var listContainer = Db.ListContainers.Single(l => l.ListType == ListTypes.Albums);
+                var albumList = (AlbumList) listContainer[0];
+
+                Assert.AreEqual(6, albumList.NumberOfAlbumItems);
             }
 
             [Test, NUnit.Framework.Category("iTunesDb")]
@@ -44,7 +47,7 @@ namespace iTunesDB.Net.Tests
                 var listContainer = Db.ListContainers.Single(l => l.ListType == ListTypes.Tracks);
                 var trackList = (TrackList) listContainer[0];
 
-                Assert.AreEqual(25, trackList.Count);
+                Assert.AreEqual(23, trackList.Count);
             }
 
             [Test, NUnit.Framework.Category("iTunesDb")]
@@ -82,19 +85,19 @@ namespace iTunesDB.Net.Tests
                 var listContainer = Db.ListContainers.Single(l => l.ListType == ListTypes.PlayList);
                 var playlists = (PlayLists) listContainer[0];
 
-                Assert.AreEqual(2, playlists.Count);
+                Assert.AreEqual(3, playlists.Count);
 
                 // 1. PlayList -> "MasterPlaylist"
                 var playList = (PlayList) playlists[0];
 
                 Assert.AreEqual("iPod von Klaus Moster", playList.Name);
                 Assert.AreEqual(19, playList.DataObjectChildCount);
-                Assert.AreEqual(25, playList.PlaylistItemCount);
+                Assert.AreEqual(23, playList.PlaylistItemCount);
                 Assert.IsTrue(playList.IsMasterPlaylist);
                 //Assert.AreEqual(3, playList.Unk);
-                Assert.AreEqual(new DateTime(2019, 7, 1, 12, 48, 7), playList.Timestamp);
-                Assert.AreEqual(676597550, playList.PersistentPlaylistId);
-                Assert.AreEqual(-818757207, playList.Unk3);
+                Assert.AreEqual(new DateTime(2019, 7, 8, 10, 20, 50), playList.Timestamp);
+                Assert.AreEqual(2914338148, playList.PersistentPlaylistId);
+                Assert.AreEqual(1103926531, playList.Unk3);
                 Assert.AreEqual(0, playList.StringMhodCount);
                 Assert.AreEqual(0, playList.PodcastFlag);
                 Assert.AreEqual(ListSortDirection.Descending, playList.ListSortOrder);
@@ -107,9 +110,24 @@ namespace iTunesDB.Net.Tests
                 Assert.AreEqual(4, playList.PlaylistItemCount);
                 Assert.IsFalse(playList.IsMasterPlaylist);
                 //Assert.AreEqual(3, playList.Unk);
-                Assert.AreEqual(new DateTime(2019, 7, 2, 13, 54, 42), playList.Timestamp);
+                Assert.AreEqual(new DateTime(2019, 7, 10, 12, 58, 27), playList.Timestamp);
                 Assert.AreEqual(1702470952, playList.PersistentPlaylistId);
                 Assert.AreEqual(-1141886561, playList.Unk3);
+                Assert.AreEqual(0, playList.StringMhodCount);
+                Assert.AreEqual(0, playList.PodcastFlag);
+                Assert.AreEqual(ListSortDirection.Descending, playList.ListSortOrder);
+
+                // 3. PlayList -> "Playlist Video"
+                playList = (PlayList) playlists[2];
+
+                Assert.AreEqual("Playlist Video", playList.Name);
+                Assert.AreEqual(3, playList.DataObjectChildCount);
+                Assert.AreEqual(2, playList.PlaylistItemCount);
+                Assert.IsFalse(playList.IsMasterPlaylist);
+                //Assert.AreEqual(3, playList.Unk);
+                Assert.AreEqual(new DateTime(2019, 7, 11, 16, 24, 00), playList.Timestamp);
+                Assert.AreEqual(3073293726, playList.PersistentPlaylistId);
+                Assert.AreEqual(-209624707, playList.Unk3);
                 Assert.AreEqual(0, playList.StringMhodCount);
                 Assert.AreEqual(0, playList.PodcastFlag);
                 Assert.AreEqual(ListSortDirection.Descending, playList.ListSortOrder);

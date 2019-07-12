@@ -44,13 +44,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Attributes\DataObjectAttribute.cs" />
+    <Compile Include="Database\AlbumItem.cs" />
     <Compile Include="Database\DbList.cs" />
-    <Compile Include="Database\MhiaObject.cs" />
-    <Compile Include="Database\MhlaObject.cs" />
+    <Compile Include="Database\AlbumList.cs" />
     <Compile Include="Enumerations\CodingFormats.cs" />
     <Compile Include="Database\IDbObject.cs" />
     <Compile Include="Database\ListContainer.cs" />
-    <Compile Include="Database\MhipObject.cs" />
     <Compile Include="Database\PlayLists.cs" />
     <Compile Include="Database\Track.cs" />
     <Compile Include="Database\PlayList.cs" />
@@ -59,6 +58,7 @@
     <Compile Include="Database\PlayListItem.cs" />
     <Compile Include="Database\iTunesDb.cs" />
     <Compile Include="Enumerations\DataObjects.cs" />
+    <Compile Include="Enumerations\MediaType.cs" />
     <Compile Include="Enumerations\Platform.cs" />
     <Compile Include="Events\TrackReadEventArgs.cs" />
     <Compile Include="Readers\DataObjects\DataObjectReader.cs" />

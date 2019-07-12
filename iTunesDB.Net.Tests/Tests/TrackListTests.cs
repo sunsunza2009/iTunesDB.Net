@@ -18,7 +18,7 @@ namespace iTunesDB.Net.Tests
                     Reader.Children.FirstOrDefault(r => ((ListContainer) (r.DbObject)).ListType == ListTypes.Tracks);
                 var rdrTrackList = rdrListContainer.Children.FirstOrDefault();
 
-                Assert.AreEqual(25, Db.Tracks.Count);
+                Assert.AreEqual(23, Db.Tracks.Count);
                 Assert.AreEqual(rdrTrackList.TotalSize, Db.Tracks.Count);
             }
         }
