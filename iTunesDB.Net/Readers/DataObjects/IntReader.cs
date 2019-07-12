@@ -6,7 +6,8 @@ namespace iTunesDB.Net.Readers.DataObjects
 {
     internal class IntReader : DataObjectReader
     {
-        private static DO[] dataObjectTypes = new DO[] { DO.SizingAndOrder };
+        private static DO[] dataObjectTypes = new DO[] { DO.SizingAndOrder, DO.LibraryPlaylistIndex,
+            DO.LibraryPlaylistIndexLetterJumpTable };
         public override DO[] DataObjectTypes { get { return dataObjectTypes; } }
 
         public override void ParseDataObject(BinaryReader Reader)

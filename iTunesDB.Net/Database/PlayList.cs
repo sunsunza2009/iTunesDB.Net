@@ -15,6 +15,12 @@ namespace iTunesDB.Net.Database
         [Attributes.DataObject("SizingAndOrder")]
         public int SizingAndOrder { get; set; }
 
+        [Attributes.DataObject("LibraryPlaylistIndex")]
+        public int PlaylistIndex { get; set; }
+
+        [Attributes.DataObject("LibraryPlaylistIndexLetterJumpTable")]
+        public int PlaylistIndexLetterJumpTable { get; set; }
+
         public int DataObjectChildCount { get; set; }
         public int PlaylistItemCount { get; set; }
         public bool IsMasterPlaylist { get; set; }
