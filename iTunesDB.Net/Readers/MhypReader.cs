@@ -30,7 +30,9 @@ namespace iTunesDB.Net.Readers
             playList.IsMasterPlaylist = ParseBool(ReadByte(Reader), "IsMasterPlaylist");
 
             // 0x15 (3 bytes) - unknown
-            playList.Unk = ReadBytes(Reader, 3);
+            playList.UnkByte1 = ReadByte(Reader);
+            playList.UnkByte2 = ReadByte(Reader);
+            playList.UnkByte3 = ReadByte(Reader);
 
             // 0x18 (4 bytes) - playlist creation time
             playList.Timestamp = ReadDateTime(Reader);

@@ -24,7 +24,9 @@ namespace iTunesDB.Net.Database
         public int DataObjectChildCount { get; set; }
         public int PlaylistItemCount { get; set; }
         public bool IsMasterPlaylist { get; set; }
-        public byte[] Unk { get; set; }
+        public byte UnkByte1 { get; set; }
+        public byte UnkByte2 { get; set; }
+        public byte UnkByte3 { get; set; }
         public DateTime Timestamp { get; set; }
         public uint PersistentPlaylistId { get; set; }
         public int Unk3 { get; set; }
