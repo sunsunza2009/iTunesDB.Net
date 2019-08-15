@@ -24,6 +24,7 @@ namespace iTunesDB.Net.Readers
             //         except it contains the podcasts in a slightly different way.
             //     4 = Album List, first seen with iTunes 7.1.
             //     5 = New Playlist List with Smart Playlists, first seen with iTunes 7.3.
+            listContainer.TotalSize = TotalSize;
             listContainer.ListType = ReadEnum<ListTypes>(Reader);
 
             db.ListContainers.Add(listContainer);
