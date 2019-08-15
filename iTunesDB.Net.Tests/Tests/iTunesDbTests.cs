@@ -1,4 +1,4 @@
-﻿using iTunesDB.Net.Enumerations;
+using iTunesDB.Net.Enumerations;
 using NUnit.Framework;
 
 namespace iTunesDB.Net.Tests
@@ -44,6 +44,47 @@ namespace iTunesDB.Net.Tests
             public void iTunesDb_UnknownBytes()
             {
                 Assert.AreEqual(56, Db.UnknownBytes.Length);
+            }
+        }
+
+        [TestFixture]
+        public class WithNanoPodDb : TestBase
+        {
+            [Test, Category("iTunesDb")]
+            public void iTunesDb_FileName()
+            {
+                Assert.AreEqual(DbNanoPodFileName, DbNanoPod.FileName);
+            }
+
+            [Test, Category("iTunesDb")]
+            public void iTunesDb_FileSize()
+            {
+                Assert.AreEqual(57466, DbNanoPod.FileSize);
+                Assert.AreEqual(DbNanoPodFileSize, DbNanoPod.FileSize);
+            }
+
+            [Test, Category("iTunesDb")]
+            public void iTunesDb_Version()
+            {
+                Assert.AreEqual(115, DbNanoPod.Version);
+            }
+
+            [Test, Category("iTunesDb")]
+            public void iTunesDb_Platform()
+            {
+                Assert.AreEqual(Platform.Windows, DbNanoPod.Platform);
+            }
+
+            [Test, Category("iTunesDb")]
+            public void iTunesDb_Language()
+            {
+                Assert.AreEqual("de", DbNanoPod.Language);
+            }
+
+            [Test, Category("iTunesDb")]
+            public void iTunesDb_UnknownBytes()
+            {
+                Assert.AreEqual(220, DbNanoPod.UnknownBytes.Length);
             }
         }
 
