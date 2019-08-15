@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 
 namespace iTunesDB.Net.Database
 {
@@ -32,6 +31,6 @@ namespace iTunesDB.Net.Database
         public int Unk3 { get; set; }
         public short StringMhodCount { get; set; }
         public short PodcastFlag { get; set; }
-        public ListSortDirection ListSortOrder { get; set; }
+        public int ListSortOrder { get; set; }
     }
 }
