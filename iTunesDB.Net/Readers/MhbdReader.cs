@@ -40,7 +40,7 @@ namespace iTunesDB.Net.Readers
             // 0x0C (4 bytes) - compressed db?
             //     2 on iPhone 3.0 and Nano 5G, 1 on iPod Color and iPod Classic
             //     the iPod Classic 3G  won't work if set to 2.
-            var deviceSupportsCompressedDb = ReadInt32(Reader);
+            Db.DeviceSupportsCompressedDb = ReadInt32(Reader);
 
             // 0x10 (4 bytes), version number
             //     0x01: iTunes 2
@@ -69,7 +69,7 @@ namespace iTunesDB.Net.Readers
             var childCount = ReadInt32(Reader);
 
             // 0x18 (8 bytes), iTunes database id
-            var databaseId = ReadBytes(Reader, 8);
+            Db.Id = ReadBytes(Reader, 8);
 
             // 0x20 (2 bytes), platform
             //     1 = macOS
@@ -78,49 +78,50 @@ namespace iTunesDB.Net.Readers
 
             // 0x22 (2 bytes), unknown
             //     always 611?
-            var unknownAt0X22 = ReadInt16(Reader); // 611?
+            //Db.UnknownAt0X22 = ReadInt16(Reader); // 611?
+            Db.UnknownAt0X22 = ReadBytes(Reader, 2);
 
             // 0x24 (8 bytes, iPod (db) id?
             //     no idea how to read
-            var ipodid = ReadBytes(Reader, 8);
+            Db.UnknownAt0X24 = ReadBytes(Reader, 8);
 
             // 0x2C (4 bytes), zero padding
-            var zeroPaddingAt0X2C = ReadBytes(Reader, 4);
+            Db.UnknownAt0X2C = ReadBytes(Reader, 4);
 
             // 0x30 (4 bytes), hashing scheme (0 or 1)
-            var unknownAt0X30 = ReadInt16(Reader);
+            Db.UnknownAt0X30 = ReadInt16(Reader);
 
             // 0x32 (20 bytes), unknown
             //     SHA1-Hash?
             //     no idea how to read.
-            var unknownAt0X32 = ReadBytes(Reader, 20);
+            Db.UnknownAt0X32 = ReadBytes(Reader, 20);
 
             // 0x46 (2 bytes), language (de, en, ...)
             Db.Language = ReadStringUtfDetect(Reader, 2);
 
             // 0x48 (8 bytes), library persistant id
             //     no idea how to read
-            var libraryPersistantId = ReadBytes(Reader, 8);
+            Db.LibraryPersistantId = ReadBytes(Reader, 8);
 
             // 0x50 (4 bytes), unknown
             //     0x01 = iPod Color
             //     0x05 = Nano 3G
-            var unknownAt0X50 = ReadInt32(Reader);
+            Db.UnknownAt0X50 = ReadInt32(Reader);
 
             // 0x54 (4 bytes), unknown
             //     0x0f = iPod Color
             //     0x4d = Nano 3G
-            var unknownAt0X54 = ReadInt32(Reader);
+            Db.UnknownAt0X54 = ReadInt32(Reader);
 
             // 0x58 (20 bytes), unknown
             //     SHA1-Hash? (hash58)
             //     no idea how to read.
-            var unknownAt0X58 = ReadBytes(Reader, 20);
+            Db.UnknownAt0X58 = ReadBytes(Reader, 20);
 
             // 0x6C (4 bytes), timezone offset in seconds
             Db.TimezoneOffsetInSeconds = ReadInt32(Reader);
 
-            var unknownAt0X70 = ReadBytes(Reader, 76);
+            //var unknownAt0X70 = ReadBytes(Reader, 76);
 
             Db.UnknownBytes = ReadRemainingBytes(Reader);
 
