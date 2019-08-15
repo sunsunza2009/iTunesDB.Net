@@ -72,6 +72,7 @@
     <Compile Include="Tests\TestBase.cs" />
     <Compile Include="Tests\TrackListTests.cs" />
     <Compile Include="Tests\TrackTests.cs" />
+    <Compile Include="Writers\iTunesDbWriter\iTunesDbWriterTests.cs" />
     <Compile Include="Writers\XmlWriter\XmlWriterTests.cs" />
   </ItemGroup>
   <ItemGroup>

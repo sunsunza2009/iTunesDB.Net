@@ -63,6 +63,7 @@
     <Compile Include="Enumerations\MhodTypes.cs" />
     <Compile Include="Enumerations\Platform.cs" />
     <Compile Include="Events\TrackReadEventArgs.cs" />
+    <Compile Include="Extensions\BinaryWriterExtensions.cs" />
     <Compile Include="Extensions\XmlWriterExtensions.cs" />
     <Compile Include="Readers\DataObjects\DataObjectReader.cs" />
     <Compile Include="Readers\DataObjects\IntReader.cs" />
@@ -82,6 +83,14 @@
     <Compile Include="Enumerations\ListTypes.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Writers\DbToXmlWriter.cs" />
+    <Compile Include="Writers\iTunesWriter.cs" />
+    <Compile Include="Writers\MhdbWriter.cs" />
+    <Compile Include="Writers\MhlaWriter.cs" />
+    <Compile Include="Writers\MhlpWriter.cs" />
+    <Compile Include="Writers\MhltWriter.cs" />
+    <Compile Include="Writers\MhodWriter.cs" />
+    <Compile Include="Writers\MhsdWriter.cs" />
+    <Compile Include="Writers\MhypWriter.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
