@@ -48,47 +48,6 @@ namespace iTunesDB.Net.Tests
         }
 
         [TestFixture]
-        public class WithNanoPodDb : TestBase
-        {
-            [Test, Category("iTunesDb")]
-            public void iTunesDb_FileName()
-            {
-                Assert.AreEqual(DbNanoPodFileName, DbNanoPod.FileName);
-            }
-
-            [Test, Category("iTunesDb")]
-            public void iTunesDb_FileSize()
-            {
-                Assert.AreEqual(57466, DbNanoPod.FileSize);
-                Assert.AreEqual(DbNanoPodFileSize, DbNanoPod.FileSize);
-            }
-
-            [Test, Category("iTunesDb")]
-            public void iTunesDb_Version()
-            {
-                Assert.AreEqual(115, DbNanoPod.Version);
-            }
-
-            [Test, Category("iTunesDb")]
-            public void iTunesDb_Platform()
-            {
-                Assert.AreEqual(Platform.MacOs, DbNanoPod.Platform);
-            }
-
-            [Test, Category("iTunesDb")]
-            public void iTunesDb_Language()
-            {
-                Assert.AreEqual("de", DbNanoPod.Language);
-            }
-
-            [Test, Category("iTunesDb")]
-            public void iTunesDb_UnknownBytes()
-            {
-                Assert.AreEqual(220, DbNanoPod.UnknownBytes.Length);
-            }
-        }
-
-        [TestFixture]
         public class WithEmptyDb : TestBase
         {
             [Test, Category("iTunesDb")]
