@@ -26,7 +26,6 @@ namespace iTunesDB.Net.Tests
         {
 #if !ASYNC
             var pathToTestDirectory = TestContext.CurrentContext.TestDirectory;
-            var exportXmlFilePath = Path.Combine(pathToTestDirectory, "Data", "export.xml");
             _dbFilePath = Path.Combine(pathToTestDirectory, "Data", "iTunesDB");
             _dbNanoPodFilePath = Path.Combine(pathToTestDirectory, "Data", "iTunesDB_NanoPod");
             _dbEmptyFilePath = Path.Combine(pathToTestDirectory, "Data", "iTunesDB_Empty");
@@ -38,12 +37,8 @@ namespace iTunesDB.Net.Tests
             Db = Reader.Open(_dbFilePath);
             DbEmpty = ReaderEmpty.Open(_dbEmptyFilePath);
 //            DbNanoPod = ReaderNanoPod.Open(_dbNanoPodFilePath);
-
-            ExportXml = File.ReadAllText(exportXmlFilePath).Replace(Environment.NewLine, "");
 #endif
         }
-
-        public static string ExportXml { get; private set; }
 
         public static int DbFileSize => GetFileSize(_dbFilePath);
 
