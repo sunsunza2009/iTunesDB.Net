@@ -1,9 +1,6 @@
 ﻿using System;
-using System.ComponentModel;
 using System.IO;
-using System.Text;
 using iTunesDB.Net.Database;
-using iTunesDB.Net.Enumerations;
 
 namespace iTunesDB.Net.Readers
 {
@@ -53,7 +50,7 @@ namespace iTunesDB.Net.Readers
             playList.PodcastFlag = ReadInt16(Reader);
 
             // 0x2C (4 bytes) - list sort order
-            playList.ListSortOrder = ReadEnum<ListSortDirection>(Reader);
+            playList.ListSortOrder = ReadInt32(Reader);
 
             var db = (iTunesDb) ParentReader.GrandparentDbObject;
 
