@@ -27,8 +27,8 @@ namespace iTunesDB.Net
                 writer.Write(0);
             }
 
-            // String type utf8
-            writer.Write(2);
+            // This was observed to be 2 for inversed endian ordered iTunesDBs for mobile phones with UTF8 strings and 1 for standard iPod iTunesDBs with UTF16 strings. 
+            writer.Write(1);
 
             // Size of string
             writer.Write(text.Length);
