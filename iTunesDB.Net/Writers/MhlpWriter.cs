@@ -1,4 +1,5 @@
 ﻿using System.IO;
+using System.Linq;
 using iTunesDB.Net.Database;
 using iTunesDB.Net.Extensions;
 
@@ -13,9 +14,8 @@ namespace iTunesDB.Net
             // Size of the mhlp header.
             writer.Write(92);
 
-            // Album items
-            // TODO: Fill later ?? 
-            writer.Write(playLists.Count);
+            // number of playlists
+            writer.Write(playLists.Count());
 
             // Dummy Space
             writer.WriteZeroByteFields(20);

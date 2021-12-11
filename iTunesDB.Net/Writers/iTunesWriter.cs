@@ -15,7 +15,7 @@ namespace iTunesDB.Net
             using (var fs = new FileStream(fileName, FileMode.Create, FileAccess.ReadWrite, FileShare.ReadWrite))
             using (var writer = new BinaryWriter(fs))
             {
-                MhdbWriter.Write(db, writer);
+                MhbdWriter.Write(db, writer);
                 MhsdWriter.Write(db, writer);
             }
         }
