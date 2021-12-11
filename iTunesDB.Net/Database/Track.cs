@@ -88,6 +88,7 @@ namespace iTunesDB.Net.Database
         public string EQSetting { get; set; }
         public string Category { get; set; }
         public string Description { get; set; }
+        public string Copyright { get; set; }
 
         // --
     }

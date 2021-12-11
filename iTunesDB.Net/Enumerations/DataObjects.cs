@@ -43,6 +43,7 @@
         AlbumListArtist = 201,	                    // In Album List, iTunes 7.1
         AlbumListArtistSort = 202,	                // For sorting. In Album List, iTunes 7.1
         AlbumListPodcastUrl = 203,
-        AlbumListTVShow = 204	                    // In Album List, v. 0x18
+        AlbumListTVShow = 204,	                    // In Album List, v. 0x18
+        Copyright = 39
     }
 }

@@ -41,6 +41,7 @@
         AlbumListSortByArtist = 202,
         AlbumListPodcastUrl = 203,
         AlbumListTvShow = 204,
-        AlbumListArtistMhii = 300
+        AlbumListArtistMhii = 300,
+        Copyright = 39
     }
 }

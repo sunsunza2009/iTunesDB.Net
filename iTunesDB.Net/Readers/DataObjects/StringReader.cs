@@ -10,7 +10,7 @@ namespace iTunesDB.Net.Readers.DataObjects
         {
             DO.Title, DO.Location, DO.Album, DO.Artist, DO.Genre,
             DO.FileType, DO.EQSetting, DO.Comment, DO.Category, DO.Composer, DO.Grouping, DO.Description, DO.Unknown2,
-            DO.Unknown3, DO.AlbumListAlbum, DO.AlbumListArtist, DO.AlbumListArtistSort
+            DO.Unknown3, DO.AlbumListAlbum, DO.AlbumListArtist, DO.AlbumListArtistSort, DO.Copyright
         };
 
         public override DO[] DataObjectTypes
