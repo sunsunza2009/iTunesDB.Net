@@ -124,6 +124,8 @@ namespace iTunesDB.Net
                     break;
                 case MhodTypes.AlbumListArtistMhii:
                     break;
+                case MhodTypes.Copyright:
+                    break;
                 default:
                     throw new ArgumentOutOfRangeException(nameof(mhodType), mhodType, null);
             }

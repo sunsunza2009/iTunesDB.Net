@@ -14,7 +14,7 @@ namespace iTunesDB.Net
             writer.Write(92);
 
             // Album items
-            // TODO: Später füllen??
+            // TODO: Fill later ?? 
             writer.Write(playLists.Count);
 
             // Dummy Space

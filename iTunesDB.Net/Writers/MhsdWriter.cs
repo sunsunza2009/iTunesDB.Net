@@ -16,7 +16,7 @@ namespace iTunesDB.Net
                 writer.Write(96);
 
                 // Size of the header and all child records
-                // TODO: aktuell wie die EmptyDB, danach -1 und später wird die Größe gesetzt
+                // TODO: currently like the EmptyDB, then -1 and later the size is set
                 writer.Write(listcontainer.TotalSize);
 
                 // ListType

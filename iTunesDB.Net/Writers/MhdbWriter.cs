@@ -17,10 +17,10 @@ namespace iTunesDB.Net
 
             // Size of the header and all child records (since everything is a child of MHBD,
             // this will always be the size of the entire file)
-            // TODO: aktuell wie die EmptyDB, danach -1 und später wird die Größe gesetzt
+            // TODO: currently like the EmptyDB, then -1 and later the size is set 
             writer.Write(db.FileSize);
 
-            // TODO: aktuell wie die eingelesene DB, später ggf. selbst ermitteln??
+            // TODO: up-to-date like the read-in DB, later, if necessary, determine it yourself ??
             writer.Write(db.DeviceSupportsCompressedDb);
 
             // Version number, always 0x30, because this is the db version we support
